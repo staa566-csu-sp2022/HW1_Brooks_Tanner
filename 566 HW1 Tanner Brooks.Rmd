@@ -11,3 +11,26 @@ knit: (function(input_file, encoding) {
 
 
 
+
+```{r}
+# install.packages("ggplot2")
+library(ggplot2)
+
+
+data(mpg, package="ggplot2")
+
+
+p <- ggplot(mpg, aes(cty, hwy))
+
+
+# Scatterplot
+p + geom_point(color='darkblue') + 
+  geom_smooth(method="lm", se=T, color='darkred') +
+  labs( 
+       y="highway", 
+       x="city", 
+       title="MPG City vs. Highway - mpg dataset"
+       )
+```
+
+
